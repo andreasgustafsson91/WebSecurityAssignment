@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebSecurityAssignment.Models.Comment>
+
+@{
+    ViewData["Title"] = "Chat Room";
+    ViewBag.Current = "Chat";
+}
+
+<h1 class="display-4 text-center text-primary">Chat-ish.</h1>
+<div class="bg-warning shadow-sm rounded-xl p-3">
+    <table class="table table-striped table-borderless table-hover">
+        <thead>
+            <tr>
+                <th class="text-primary">
+                    @Html.DisplayNameFor(model => model.Content)
+                </th>
+                <th>
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Content)*@
+                    @Html.Raw(item.Content)
+                </td>
+                <td class="text-end">
+                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit text-primary"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle text-primary"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash-alt text-danger"></i></a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+        
+    <a class="btn btn-primary border border-white" asp-action="Create" role="button"><i class="fas fa-plus font-white"></i> Create</a>
+    @*<p><a asp-action="Create">Create New</a></p>*@
+    
+</div>
+

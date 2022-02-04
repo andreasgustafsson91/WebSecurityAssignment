@@ -1,0 +1,25 @@
+﻿@model WebSecurityAssignment.Models.Comment
+
+@{
+    ViewData["Title"] = "Details";
+    ViewBag.Current = "Chat";
+}
+
+<h1 class="display-4 text-center text-primary">Details</h1>
+<div class="bg-warning shadow-sm rounded-xl p-3">
+    <label class="text-primary fw-bold">Details about this message:</label>
+    <hr class="bg-primary" />
+    <dl class="row">
+        <dt class = "col-sm-2 text-primary">
+            @*@Html.DisplayNameFor(model => model.Content)*@
+            Message:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+    </dl>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary border border-white">Edit</a>
+        <a asp-action="Index" class="btn btn-danger border border-white">Return</a>
+    </div>
+</div>

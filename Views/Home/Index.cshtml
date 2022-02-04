@@ -1,8 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    ViewBag.Current = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center rounded-xl shadow py-1">
+    <div>
+        <h1 class="display-4 mb-3 text-warning">Välkommen!</h1>
+        <div class="row border border-dark bg-primary rounded-xl mx-5 mt-4 mb-3 py-1">
+            <i class="col-2 fas fa-id-card fs-l text-customgreen align-self-center"></i>
+            <p class="col text-white align-self-center mx-2">För att komma åt Chat-rummet måste du först ha ett Display Namn.
+            Det får du genom att registrera dig uppe till höger. </p>
+        </div>
+    </div>
 </div>
+

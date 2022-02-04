@@ -1,0 +1,27 @@
+﻿@model WebSecurityAssignment.Models.Comment
+
+@{
+    ViewData["Title"] = "Delete";
+    ViewBag.Current = "Chat";
+}
+
+<h1 class="display-4 text-center text-primary">Delete Message.</h1>
+<div class="bg-warning shadow-sm rounded-xl p-3">
+    <label class="text-primary fw-bold">Would you like to delete this message?</label>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2 text-primary">
+            @*@Html.DisplayNameFor(model => model.Content)*@
+            Message:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Yes, Delete" class="btn btn-primary border border-white" />
+        <a asp-action="Index" class="btn btn-danger border border-white">Regrets</a>
+    </form>
+</div>

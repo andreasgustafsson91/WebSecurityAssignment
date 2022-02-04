@@ -1,0 +1,34 @@
+﻿@model WebSecurityAssignment.Models.Comment
+
+@{
+    ViewData["Title"] = "Create";
+    ViewBag.Current = "Chat";
+}
+
+<h1 class="display-4 text-center text-primary">Create Message.</h1>
+<div class="bg-warning shadow-sm rounded-xl p-3">
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label text-primary fw-bold mb-1">Create this message:</label>
+                <input asp-for="Content" class="form-control mb-2" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary border border-white" />
+                <a asp-action="Index" class="btn btn-danger border border-white">Regrets</a>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -16,21 +16,25 @@
         @if (!string.IsNullOrEmpty(options.EditProfilePolicyId))
         {
             <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="EditProfile">Hello @User.Identity?.Name!</a>
+                @*<a class="nav-link text-light" asp-area="MicrosoftIdentity" asp-controller="Account" 
+                    asp-action="EditProfile">Hello @User.Identity?.Name!</a>*@
+                <a class="nav-link text-light">Hello @User.Identity?.Name!</a>
             </li>
         }
         else
         {
-            <li><span class="navbar-text text-dark">Hello @User.Identity?.Name!</span></li>
+            <li><span class="navbar-text text-light">Hello @User.Identity?.Name!</span></li>
         }
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignOut">Sign out</a>
+        <li class="nav-item border border-white rounded bg-danger box-shadow">
+            <a class="nav-link text-light zoomy" asp-area="MicrosoftIdentity" asp-controller="Account" 
+                asp-action="SignOut">Sign out</a>
         </li>
 }
 else
 {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Sign in</a>
+        <li class="nav-item border border-white rounded bg-success box-shadow">
+            <a class="nav-link text-light zoomy" asp-area="MicrosoftIdentity" asp-controller="Account" 
+                asp-action="SignIn">Sign in</a>
         </li>
 }
 </ul>
